@@ -14,8 +14,15 @@ const size = {
     font-size:56px;
   }
 `,
-  h3: "56px",
-  h4: "32px",
+  h3: `font-size:56px; @media (max-width:600px){
+    font-size:46px;
+  } `,
+  h4: `font-size:32px; color:#d6d6d6 ;
+  
+    @media (max-width:600px){
+      font-size:22px;
+    }
+  `,
   h5: `
     font-size:26px;
     letter-spacing:4.75px; 

@@ -11,14 +11,13 @@ const variant = {
     `,
   },
   crew: {
-    container: `
-        width:80%;
-        margin:0 auto;
-        `,
-    wraper: `
-    @media (max-width:768px){
-        flex-direction:column;
-    }`,
+    wraper:`
+    justify-content:center;
+    gap:20px;
+   @media (max-width:600px){
+    flex-direction:column-reverse;
+   }
+    `
   },
   tecnology: {
     container: `
@@ -58,7 +57,7 @@ const Wraper = styled.div`
 `;
 
 const Header = styled(Heading)`
-  padding: 50px;
+  padding: 50px 100px;
   padding-bottom: 0px;
   @media (max-width: 600px) {
     padding: 0px 20px;

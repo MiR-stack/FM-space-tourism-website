@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Nav from "../../../components/shared/nav/nav";
 import HeroLayout from "../../../layouts/heroLayout/heroLayout";
 import { Content, Image, Footer } from "./main.styled";
@@ -7,20 +7,16 @@ import Heading from "../../../components/ui/text/heading";
 import SubHeading from "../../../components/ui/text/subHeading";
 
 const Main = () => {
-  const navItems = ["moon", "mars", "europa", "titan"];
+  const navItems = data.map((item) => item.name);
 
   const [nav, setNav] = useState("moon");
 
-  const [content, setContent] = useState({});
+  const [content, setContent] = useState(data[0]);
 
   function handleContent(content) {
     setContent(data.find((item) => item.name === content));
     setNav(content);
   }
-
-  useEffect(() => {
-    setContent(data.find((item) => item.name === "moon"));
-  }, []);
 
   return (
     <HeroLayout variant="destination" title="01 pick your destination">
@@ -48,7 +44,5 @@ const Main = () => {
     </HeroLayout>
   );
 };
-
-
 
 export default Main;

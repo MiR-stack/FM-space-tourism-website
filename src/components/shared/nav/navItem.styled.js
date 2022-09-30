@@ -1,22 +1,20 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-function activate(path, navItem) {
-    console.log(path,navItem);
-
-  if (path === "/" && navItem === "home") {
+function activate(path, navitem) {
+  if (path === "/" && navitem === "home") {
     return "100%";
-  } else if (path.slice(1) === navItem) {
+  } else if (path.slice(1) === navitem) {
     return "100%";
   }
   return 0;
 }
 
-function activate2(path,navItem){
-  if(path === navItem){
-  return '100%'
+function activate2(path, navitem) {
+  if (path === navitem) {
+    return "100%";
   }
-  return 0
+  return 0;
 }
 
 const Li = styled.li`
@@ -53,7 +51,7 @@ const Item = styled(Link)`
     bottom: 0;
     background-color: white;
     height: 5px;
-    width: ${(props) => activate(props.location, props.navItem)};
+    width: ${(props) => activate(props.location, props.navitem)};
     border-radius: 10px;
     transition: 0.2s linear;
   }

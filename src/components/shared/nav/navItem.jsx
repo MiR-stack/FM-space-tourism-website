@@ -9,7 +9,7 @@ function MenuItem({ children, number, type, location, handleContent }) {
           type={type}
           to={`/${children === "home" ? "" : children}`}
           location={location}
-          navItem={children}
+          navitem={children}
         >
           <Number>{number} </Number> {children}
         </Item>
