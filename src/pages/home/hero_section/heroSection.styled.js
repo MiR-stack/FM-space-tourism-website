@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 const Content = styled.div`
   max-width: 500px;
   text-align:center;
+  padding:0 20px;
+
 `;
 
 const Wraper = styled.div`
