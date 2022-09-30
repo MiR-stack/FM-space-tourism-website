@@ -1,30 +1,13 @@
 import styled from "styled-components";
+import Heading from "../../components/ui/text/heading";
 
 const variant = {
-  home: {
-    wraper: `
-    height:80vh;
-    justify-content:space-around;
-    @media (max-width:900px){
-      flex-direction:column;
-    }
-   
-    `,
-  },
+  home: {},
   destination: {
-    container: `
-        width:80%;
-        margin:50px auto;
-        @media (max-width:768px){
-            margin: 20px auto;
-        }
-        `,
     wraper: `
     padding:20px 0;
     justify-content:space-around;
-    @media (max-width:768px){
-        flex-direction:column;
-    }
+    
     `,
   },
   crew: {
@@ -51,17 +34,35 @@ const variant = {
 };
 
 const Container = styled.div`
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  min-height: 80vh;
   ${(props) => variant[props.variant].container}
+
+  @media (max-width:600px) {
+    text-align: center;
+  }
 `;
 
 const Wraper = styled.div`
+  min-height: 70vh;
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
   ${(props) => variant[props.variant].wraper}
+
+  @media (max-width:600px) {
+    margin-top: 20px;
+  }
 `;
 
-export { Container, Wraper };
+const Header = styled(Heading)`
+  padding: 50px;
+  padding-bottom: 0px;
+  @media (max-width: 600px) {
+    padding: 0px 20px;
+  }
+`;
+
+export { Container, Wraper, Header };

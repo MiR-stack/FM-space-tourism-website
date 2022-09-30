@@ -1,7 +1,7 @@
 import Heading from "../../../components/ui/text/heading";
 import SubHeading from "../../../components/ui/text/subHeading";
 import HeroLayout from "../../../layouts/heroLayout/heroLayout";
-import { Button, Content, Wraper } from "./heroSection.styled";
+import { Button, Content, Wraper,Explore } from "./heroSection.styled";
 
 function HeroSection() {
   return (
@@ -16,7 +16,7 @@ function HeroSection() {
         </SubHeading>
       </Content>
       <Wraper>
-        <Button>Explore</Button>
+        <Button><Explore to='/destinations'>explore</Explore></Button>
       </Wraper>
     </HeroLayout>
   );

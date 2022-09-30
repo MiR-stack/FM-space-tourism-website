@@ -1,10 +1,10 @@
-import NavItem from './navItem'
+import NavItem from "./navItem";
 import { AiOutlineClose } from "react-icons/ai";
 import PropTypes from "prop-types";
 import { Nav, Close } from "./nav.styled";
 import { useLocation } from "react-router-dom";
 
-function Menu({ data, nav, handleNav,type }) {
+function Menu({ data, nav, handleNav, type, handleContent, Location }) {
   const location = useLocation().pathname;
 
   return (
@@ -17,7 +17,8 @@ function Menu({ data, nav, handleNav,type }) {
           key={index}
           type={type}
           number={`0${index}`}
-          location={location}
+          location={Location ? Location : location}
+          handleContent={handleContent}
         >
           {item}
         </NavItem>
@@ -32,5 +33,6 @@ Menu.propTypes = {
   data: PropTypes.array.isRequired,
   nav: PropTypes.bool,
   handleNav: PropTypes.func,
-  type:PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  handleContent: PropTypes.func,
 };

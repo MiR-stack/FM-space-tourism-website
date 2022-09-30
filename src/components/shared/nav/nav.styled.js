@@ -4,22 +4,26 @@ import styled from "styled-components";
 const Nav = styled.ul`
 display: flex;
 align-items: center;
-justify-content: center;
+justify-content: flex-start;
 gap: 2rem;
 list-style-type: none;
 color: white;
-background-color: rgba(255, 255, 255, 0.04);
+
+${(props) => props.type === 'navbar' && `
+ background-color: rgba(255, 255, 255, 0.04);
 backdrop-filter: blur(40.7742px);
 padding: 0 calc(1rem + 4vw);
 padding-right: 120px;
-${(props) => props.type === 'nav2' && `
-    padding:0;
+
 `};
 
 @media (max-width: 1000px) {
   font-size: 14px;
   gap: 1rem;
-  padding: 0 20px;
+  ${(props) => props.type === 'navbar' && `
+  padding:0 20px;
+  `
+}
 }
 
 @media (max-width: 600px) {

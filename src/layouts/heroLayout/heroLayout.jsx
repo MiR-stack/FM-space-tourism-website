@@ -1,11 +1,10 @@
-import { Container,Wraper } from "./heroLayout.styled";
-import Heading from "../../components/ui/text/heading";
+import { Container,Header,Wraper } from "./heroLayout.styled";
 import PropTypes from "prop-types";
 
 const HeroLayout = ({ title, children,variant }) => {
   return (
     <Container variant={variant}>
-      <Heading size="h5">{title} </Heading>
+      <Header size="h5">{title} </Header>
       <Wraper variant={variant}>{children} </Wraper>
     </Container>
   );

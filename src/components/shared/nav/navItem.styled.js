@@ -2,12 +2,21 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 function activate(path, navItem) {
+    console.log(path,navItem);
+
   if (path === "/" && navItem === "home") {
     return "100%";
   } else if (path.slice(1) === navItem) {
     return "100%";
   }
   return 0;
+}
+
+function activate2(path,navItem){
+  if(path === navItem){
+  return '100%'
+  }
+  return 0
 }
 
 const Li = styled.li`
@@ -44,7 +53,7 @@ const Item = styled(Link)`
     bottom: 0;
     background-color: white;
     height: 5px;
-    width: ${(props) => activate(props.location, props.navitem)};
+    width: ${(props) => activate(props.location, props.navItem)};
     border-radius: 10px;
     transition: 0.2s linear;
   }
@@ -76,4 +85,26 @@ const Number = styled.span`
   }
 `;
 
-export { Li, Item, Number };
+const ContentNavItem = styled.p`
+  color: white;
+  text-transform: uppercase;
+  height: 100%;
+  display: flex;
+  gap: 5px;
+  padding: 30px 0;
+  position: relative;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    height: 5px;
+    width: ${(props) => activate2(props.location, props.children)};
+    border-radius: 10px;
+    transition: 0.2s linear;
+  }
+`;
+
+export { Li, Item, Number, ContentNavItem };

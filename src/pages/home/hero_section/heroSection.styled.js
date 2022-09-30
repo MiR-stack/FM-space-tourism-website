@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"; 
 
 const Content = styled.div`
   max-width: 500px;
@@ -44,4 +45,10 @@ const Button = styled.button`
  
 `;
 
-export { Wraper, Button, Content };
+
+const Explore = styled(Link)`
+text-decoration:none;
+color:black;
+`
+
+export { Wraper, Button, Content,Explore };
