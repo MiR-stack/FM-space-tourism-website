@@ -50,6 +50,7 @@ const Main = () => {
         src={
           width > 1200 ? technology.image.portrait : technology.image.landscape
         }
+        alt={technology.title}
       />
     </HeroLayout>
   );
