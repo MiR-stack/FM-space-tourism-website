@@ -8,6 +8,12 @@ const Content = styled.div`
   flex-direction: column;
   gap: 100px;
 
+
+
+  @media (max-width: 1000px) {
+    text-align: center;
+    align-items: center;
+  }
   @media (max-width: 600px) {
     flex-direction: column-reverse;
     gap: 50px;
@@ -19,6 +25,10 @@ const Wraper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  @media (max-width: 1000px) {
+    text-align: center;
+    align-items: center;
+  }
 
   @media (max-width: 600px) {
     align-items: center;
@@ -59,8 +69,8 @@ const Bio = styled(SubHeading)`
 const Image = styled.img`
   height: 74.4vh;
 
-  @media (max-width: 1200px) {
-    height: calc(65vh + 5vw);
+  @media (max-width: 1800px) {
+    height: calc(40vh + 5vw);
     width: calc(200px + 10vw);
   }
   @media (max-width: 1200px) {

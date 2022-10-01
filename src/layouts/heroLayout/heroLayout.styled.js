@@ -2,8 +2,21 @@ import styled from "styled-components";
 import Heading from "../../components/ui/text/heading";
 
 const variant = {
-  home: {},
+  home: {
+   
+  },
   destination: {
+    container:`
+    width:80%;
+    margin:0 auto;
+
+    @media (max-width:1200px){
+      width:90%;
+    }
+    @media (max-width:768px){
+      width:100%;
+    }
+    `,
     wraper: `
     padding:20px 0;
     justify-content:space-around;
@@ -11,11 +24,17 @@ const variant = {
     `,
   },
   crew: {
+    container:`
+      width:80%;
+      margin: 0 auto;
+    `,
     wraper:`
-    justify-content:center;
+    justify-content:space-between;
     gap:20px;
    @media (max-width:600px){
     flex-direction:column-reverse;
+    align-items:center;
+    justify-content:center;
    }
     `
   },
@@ -74,7 +93,7 @@ const Wraper = styled.div`
 `;
 
 const Header = styled(Heading)`
-  padding: 50px 100px;
+  padding: 50px 20px;
   padding-bottom: 0px;
   @media (max-width: 600px) {
     padding: 0px 20px;
